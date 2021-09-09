@@ -13,7 +13,7 @@ imageInput.addEventListener('input', async () => {
   image.src = URL.createObjectURL(imageInput.files[0]);
 
   const averageColor = await fac.getColorAsync(image, {
-    algorithm: 'simple'
+    algorithm: 'dominant',
   });
   console.log(averageColor);
 
