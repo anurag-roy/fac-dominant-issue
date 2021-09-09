@@ -9,7 +9,8 @@ const swatch = document.getElementById('swatch');
 const imageInput = document.getElementById('imageInput') as HTMLInputElement;
 
 imageInput.addEventListener('input', async () => {
-  const image = document.createElement('img');
+  // Create the HTMLImageElement
+  const image = document.getElementById('image') as HTMLImageElement;
   image.src = URL.createObjectURL(imageInput.files[0]);
 
   const averageColor = await fac.getColorAsync(image, {
@@ -17,5 +18,5 @@ imageInput.addEventListener('input', async () => {
   });
   console.log(averageColor);
 
-  swatch.style.setProperty('background', averageColor.hex);
+  swatch.style.setProperty('background', averageColor.hexa);
 });
